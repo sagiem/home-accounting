@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
     'core.apps.CoreConfig',
     'users.apps.UsersConfig',
 
@@ -104,6 +106,21 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+DATE_INPUT_FORMATS = ['%d.%m.%Y', '%Y-%m-%d']
+DATE_FORMAT = 'd.m.Y'
+DATETIME_FORMAT = 'd.m.Y H:i'
+SHORT_DATETIME_FORMAT = 'd.m.Y H:i'
+
+LOGIN_URL = '/admin/login'
+
+rest_framework = {
+    'DEFAULT_RENDER_CLASSES': ('rest_framerwork.renderens.JSONRenderer'),
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend'),
+    'DATE_INPUT_FORMATS': DATE_INPUT_FORMATS,
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    'DATETIME_FORMAT': '%y-%m-%d %H:%M:%S',
+}
 
 
 # Internationalization
