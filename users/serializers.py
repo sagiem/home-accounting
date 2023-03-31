@@ -11,19 +11,12 @@ class RegisteUser(serializers.Serializer):
     def validate_username(self, value):
         if models.CustomUser.objects.filter(username=value).exists():
             raise serializers.ValidationError('Пользователь с таким именем уже есть')
-        print(value)
         return value
 
     def validate_email(self, value):
         if models.CustomUser.objects.filter(email=value).exists():
             raise serializers.ValidationError('Пользователь с таким email уже есть')
-        print(value)
         return value
-
-    def validate(self, attrs):
-        print(attrs)
-        return attrs
-
 
 
 
