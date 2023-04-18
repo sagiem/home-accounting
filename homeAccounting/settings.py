@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    # 'django.contrib.staticfiles',
+    'drf_yasg',
     'core.apps.CoreConfig',
     'users.apps.UsersConfig',
 
@@ -114,9 +116,9 @@ SHORT_DATETIME_FORMAT = 'd.m.Y H:i'
 
 LOGIN_URL = '/admin/login'
 
-rest_framework = {
+REST_FRAMEWORK = {
     'DEFAULT_RENDER_CLASSES': ('rest_framerwork.renderens.JSONRenderer'),
-    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend'),
+    # 'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend'),
     'DATE_INPUT_FORMATS': DATE_INPUT_FORMATS,
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
     'DATETIME_FORMAT': '%y-%m-%d %H:%M:%S',
